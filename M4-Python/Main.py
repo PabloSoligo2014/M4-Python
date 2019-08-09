@@ -31,12 +31,15 @@ if __name__ == '__main__':
     
     #->Iteraciones sobre listas, se crea la lista utilizando nombre clase
     word_list = list()
-    
     word_list.extend(["Hola", "Mundo", "!"])
-    
-    for word in word_list:
-        print(word)
-    
+
+    #->Ciclo indefinido
+    i=0
+    wll = len(word_list)
+    while(i<wll):
+        #->A los elementos de la lista se los puede acceder por subindices 
+        print(word_list[i])
+        i+=1 #->Operacion valida como en C/C++ => i=i+1, no es posible i++
     
     
         
