@@ -27,10 +27,17 @@ if __name__ == '__main__':
             #->Agrego a la lista
             upper.append(i)
             
-    
     print("Lower:", lower)
     print("Upper:", upper)
     
     
+    #->Iteraciones sobre listas, se crea la lista utilizando nombre clase
+    word_list = list()
+    
+    word_list.extend(["Hola", "Mundo", "!"])
+    
+    for word in word_list:
+        print(word)
+        
     
     
