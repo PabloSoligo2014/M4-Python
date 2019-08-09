@@ -8,16 +8,29 @@ Created on 9 ago. 2019
 
 
 if __name__ == '__main__':
-    #->Ingreso simple por consola (Lo vamos a usar muy poco)
     
-    x = input("Ingrese a numero:");
-    #->Punto y coma fin de sentencia, aunque la nueva linea ofrece lo mismo comun en python
+    #->Asignacion con = 
+    midpoint = 5
+    
+    #->Instancio dos listas vacias ==> lower = list()
+    #->Con ; salto la necesidad de nueva linea para terminar sentencia (No recomendado)
+    lower = []; upper = [];
+    
+    #->separo los numeros en "altos" y "bajos"
+    #->Iteracion definida, observar que la tabulacion define el bloque!!
+    for i in range(10):
+        #->Condicional
+        if (i<midpoint):
+            #->Agrego a la lista
+            lower.append(i)
+        else:
+            #->Agrego a la lista
+            upper.append(i)
+            
+    
+    print("Lower:", lower)
+    print("Upper:", upper)
     
     
-    #->Salida por consola simple y parametrizada.
-    print("El número ingresado es ", x, ".")
-    print("El numero ingresado es %d."%(int(x)))
-                                   
-                
     
     
