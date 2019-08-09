@@ -8,12 +8,26 @@ Created on 9 ago. 2019
 
 
 if __name__ == '__main__':
-    #->Entrada por consola, la vamos a usar muy poco.
-    x = input("Ingrese un valor de coma flotante: ")
+    #->Asignacion con = 
+    midpoint = 5
     
+    #->Instancio dos listas vacias ==> lower = list()
+    #->Con ; salto la necesidad de nueva linea para terminar sentencia (No recomendado)
+    lower = []; upper = [];
     
-    print("El valor ingresado es: ", x, ".")
-    print("El valor ingresado es: %5.2f."%(float(x)))
+    #->separo los numeros en "altos" y "bajos"
+    #->Iteracion definida, observar que la tabulacion define el bloque!!
+    for i in range(10):
+        #->Condicional
+        if (i<midpoint):
+            #->Agrego a la lista
+            lower.append(i)
+        else:
+            #->Agrego a la lista
+            upper.append(i)
+            
+    print("Lower:", lower)
+    print("Upper:", upper)
     
     
     
