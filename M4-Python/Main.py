@@ -8,8 +8,15 @@ Created on 9 ago. 2019
 
 
 if __name__ == '__main__':
-    #Proyecto vacio
-    pass
+    #->Entrada por consola, la vamos a usar muy poco.
+    x = input("Ingrese un valor de coma flotante: ")
+    
+    
+    print("El valor ingresado es: ", x, ".")
+    print("El valor ingresado es: %5.2f."%(float(x)))
+    
+    
+    
         
     
     
