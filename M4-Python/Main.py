@@ -21,18 +21,11 @@ class Person(object):
     
     def __repr__(self):
         return self.__name+"|"+str(self.__age)+"|"+str(self.__heigth)
-   
-        
-        
 
 if __name__ == '__main__':
-    #Algunas ideas de programacion funcional
-    
+
     persons = [Person("Juan", 30, 1.78), Person("Pedro", 79, 1.50), Person("Maria", 21, 1.68)]
-    
-    
     persons.sort()
-    
     print(persons)
     
     
