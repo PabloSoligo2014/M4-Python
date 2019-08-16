@@ -33,7 +33,7 @@ if __name__ == '__main__':
     while(chunk):
         code, name, balance, sex, state, aux= struct.unpack("@L100sfcch", chunk)
         name = ctypes.create_string_buffer(name).value
-        print(code, name, balance, sex, state)
+        print(code, str(name, "ASCII"), balance, str(sex, "ASCII"), str(state, "ASCII"))
         chunk = f.read(112)
     
     f.close()
