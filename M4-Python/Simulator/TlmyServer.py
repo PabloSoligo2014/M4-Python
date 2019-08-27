@@ -9,6 +9,7 @@ import socket
 import threading
 import time
 import os
+import random
 
 
 r = threading.RLock()
@@ -44,29 +45,39 @@ class SocketListener(threading.Thread):
                 print("Timeout de conexiones...", exto)
             except Exception as ex:
                 print("Excepcion desconocida", ex)
+                
+                
+def send(pqt, socket_list):
+    deletesocketlist = []
+    
+    for socket in socket_list:
+        try:
+            print("Enviando paquete...")
+            socket.send(pqt)
+        except Exception as ex:
+            deletesocketlist.append(socket)
+            print("Conexion finalizada", type(ex))
+            
+    for socket in deletesocketlist:
+        socket_list.remove(socket)
+    
 
 def handle_all_connection(pqts, socket_list):
     i = 0
+    
+    
     while(1):
-        deletesocketlist = []
+        
         pqt = pqts[i]
+                
         print("Sockets en lista", len(socket_list))
-        print("Entro en seccion critica")
         r.acquire()
         try:
-            for socket in socket_list:
-                try:
-                    socket.send(pqt)
-                except Exception as ex:
-                    deletesocketlist.append(socket)
-                    print("Conexion finalizada", type(ex))
-                    
-            for socket in deletesocketlist:
-                socket_list.remove(socket)
             
+            send(pqt, socket_list)
         finally:
             r.release()
-            print("Sali de seccion critica")
+            
             
         i = i + 1
         if i>= len(pqts):
