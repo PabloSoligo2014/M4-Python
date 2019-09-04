@@ -6,8 +6,6 @@ Created on 9 ago. 2019
 @author: pabli
 '''
 import random
-
-
 #Codigo global, solo para fines didacticos
 #No desarrollar de esta manera
 temps = []
